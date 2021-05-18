@@ -15,7 +15,11 @@ module.exports = function () {
       extensions: [".ts", ".js"],
     },
     module: {
-      rules: [{ test: /\.ts$/, loader: "@ngtools/webpack" }],
+      rules: [
+        { test: /\.ts$/, loader: "@ngtools/webpack" },
+        { test: /\.css$/, loader: "raw-loader" },
+        { test: /\.html$/, loader: "raw-loader" },
+      ],
     },
     plugins: [
       new CopyWebpackPlugin({
